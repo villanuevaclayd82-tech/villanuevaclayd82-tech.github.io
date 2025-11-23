@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect | Register & Login</title>
+  <link rel="stylesheet" href="public/css/register_login.css" />
+</head>
+<body>
+  
+<div class="auth-container">
+
+    <!-- Login Form -->
+    <div class="form-box" id="login-box">
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="switch-text">Don't have an account? 
+        <a href="#" onclick="showRegister()">Register</a>
+      </p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="form-box hidden" id="register-box">
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Confirm Password" required />
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+      <p class="switch-text">Already have an account? 
+        <a href="#" onclick="showLogin()">Login</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+  function showRegister() {
+    document.getElementById("login-box").classList.add("hidden");
+    document.getElementById("register-box").classList.remove("hidden");
+  }
+
+  function showLogin() {
+    document.getElementById("register-box").classList.add("hidden");
+    document.getElementById("login-box").classList.remove("hidden");
+  }
+
+  document.querySelector("#login-box form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelector('input[type="password"]').value;
+    alert(`Logging in with:\nEmail: ${email}\nPassword: ${password}`);
+  });
+
+  document.querySelector("#register-box form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelectorAll('input[type="password"]')[0].value;
+    const confirmPassword = this.querySelectorAll('input[type="password"]')[1].value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    alert(`Registering:\nName: ${name}\nEmail: ${email}`);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampusConnect | Contact</title>
+  <link rel="stylesheet" href="public/css/contact.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">CampusConnect</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="colleges.html">Colleges</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-container">
+    <div class="contact-image"></div>
+
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Please provide your details so we can assist you.</p>
+
+      <div class="call-us">
+        📞 Call us at: <a href="tel:+63 123 4567 890">+63 123 4567 890</a>
+      </div>
+
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Juan Dela Cruz" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="e.g. juan@example.com" required />
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" placeholder="e.g. BSIT" required />
+
+        <label for="year">Year Level:</label>
+        <select id="year" name="year" required>
+          <option value="" disabled selected>Select Year</option>
+          <option>1st Year</option>
+          <option>2nd Year</option>
+          <option>3rd Year</option>
+          <option>4th Year</option>
+        </select>
+
+        <label for="section">Section:</label>
+        <input type="text" id="section" name="section" placeholder="e.g. Section A" required />
+
+        <label for="message">Additional Message (Optional):</label>
+        <textarea id="message" name="message" placeholder="Write any notes or questions here..."></textarea>
+
+        <button type="submit">Submit Info</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
